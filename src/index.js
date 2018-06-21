@@ -9,7 +9,7 @@ import { Provider } from 'react-redux';
 import { theReducer } from './reducers';
 
 const store = createStore(
-    addToDoReducer,
+    theReducer,
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
