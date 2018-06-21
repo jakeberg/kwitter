@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
-
+import { Route, Link, Switch  } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { addMessage, listMessages, login } from '../actions';
 
 class App extends Component {
 
