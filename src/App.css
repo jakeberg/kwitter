@@ -47,8 +47,18 @@ img {
 .App-title {
   font-size: 1.5em;
 }
+.allMessages {
+  display: flex;
+  text-align: left;
+}
+.allMessages ul {
+  list-style-type: none;
+}
 
-
+.ListItem {
+  width: 200px;
+  height: 200px;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

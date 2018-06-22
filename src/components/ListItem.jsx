@@ -1,5 +1,6 @@
 import React from 'react';
 import '../App.css';
+import { Feed, Icon } from 'semantic-ui-react'
 
 class ListItem extends React.Component {
 

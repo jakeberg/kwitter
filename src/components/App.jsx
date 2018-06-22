@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import '../App.css';
 import ListMessages from './ListMessages';
+import Auth from './Auth';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 class App extends Component {
 
@@ -72,19 +74,24 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <div className="App">
+        <head>
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css" />
+        </head>
+
+        <div className="ui container App ">
           <div className="App-header">
             <div className="App-title">
-              <h1>Twitter, but worse</h1>
-              <p id="lol">Have fun i guess</p>
+              <h1 className="ui header"> Kwitter </h1>
             </div>
           </div>
-          {/* <div id="buttons">
-            <button onClick={this.handleRegistration}>Click for Registration</button>
-            <button onClick={this.handleLogin}>Click for Login</button>
-          </div> */}
-          <ListMessages messages={this.state.messages} />
-          <img src="https://i.redditmedia.com/27bQCeT9rh-cVK0R3ZEig-V8ufwS04H50K0oI_c1vzQ.jpg?w=500&s=83a7df8c84302bc75ec24c74d48c64fc" alt="sonic says: pee is stored in the balls" />
+          <section>
+            <Switch>
+              <Route exact path="/" component={props => <Auth />} />
+            </Switch>
+            <Switch>
+              <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
+            </Switch>
+          </section>
         </div>
       </React.Fragment>
     );

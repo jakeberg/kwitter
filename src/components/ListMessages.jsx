@@ -15,4 +15,5 @@ class ListMessages extends React.Component {
     };
   };
 
-  export default ListMessages;
+
+export default ListMessages;
