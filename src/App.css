@@ -14,6 +14,10 @@
   font-size: 8px;
 }
 
+img {
+  margin: 3em;
+}
+
 .postItem {
   display: flex;
   flex-flow: column nowrap;

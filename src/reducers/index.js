@@ -1,4 +1,4 @@
-import { ADD_MESSAGE, LIST_MESSAGES, LOGIN } from '../actions';
+import { ADD_MESSAGE } from '../actions';
 
 
 

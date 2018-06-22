@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../App.css';
 
 class ListItem extends React.Component {
@@ -7,12 +7,13 @@ class ListItem extends React.Component {
     var monthNames = ["", "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     var day = date.substring(8, 10);
-    var monthIndex = parseInt(date.substring(5, 7));
+    var monthIndex = parseInt(date.substring(5, 7), 10);
     var year = date.substring(0, 4);
+    var time = "";
     if (date.substring(11, 13) > 12) {
-      var time = (date.substring(11, 13) - 12) + date.substring(13, 16) + " PM";
+      time = (date.substring(11, 13) - 12) + date.substring(13, 16) + " PM";
     } else {
-      var time = date.substring(11, 16) + " AM";
+      time = date.substring(11, 16) + " AM";
     }
 
     return day + ' ' + monthNames[monthIndex] + ' ' + year + ' at ' + time;
