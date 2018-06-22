@@ -9,29 +9,6 @@
   margin: 3em;
 }
 
-img {
-  margin: 3em;
-}
-
-.postItem {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  padding: 1em;
-  border: 5px solid  rgb(0, 95, 133);
-  background-color: rgb(250, 250, 250);
-}
-
-.postDate {
-  font-size: 0.75em;
-  color: gray;
-  margin-top: 0.15em;
-}
-
-.postText {
-  font-size: 1.5em;
-}
-
 .App-header {
   background-color: rgb(0, 95, 133);
   height: 150px;
@@ -42,16 +19,17 @@ img {
 .App-title h1 {
   font-size: 7em;
   font-family: 'Pacifico', cursive;
-}
-.allMessages {
-  display: flex;
-  text-align: left;
-}
-.allMessages ul {
-  list-style-type: none;
+  position: absolute;
 }
 
-.ListItem {
-  width: 200px;
-  height: 200px;
+.logoutBtnPosition {
+  position: absolute;
+  top: 10px;
+  right: 100px;
+}
+
+@media (max-width: 500px) {
+  .logoutBtnPosition {
+    right: 50px;
+  }
 }

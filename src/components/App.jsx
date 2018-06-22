@@ -4,6 +4,7 @@ import '../App.css';
 import ListMessages from './ListMessages';
 import Auth from './Auth';
 import Footer from "./Footer";
+import { Link } from 'react-router-dom';
 
 class App extends Component {
 
@@ -69,19 +70,21 @@ class App extends Component {
         </head>
 
         <div className="ui container">
+
           <div className="App-header">
+            <button class="ui inverted button button logoutBtnPosition">Logout</button>
             <div className="App-title">
-              <h1> Kwitter </h1>
+              <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <h1> Kwitter </h1></Link>
             </div>
           </div>
-          <section>
-            <Switch>
-              <Route exact path="/" component={props => <Auth />} />
-            </Switch>
-            <Switch>
-              <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
-            </Switch>
-          </section>
+
+          <Switch>
+            <Route exact path="/" component={props => <Auth />} />
+          </Switch>
+          <Switch>
+            <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
+          </Switch>
+
           <Footer />
         </div>
       </React.Fragment>

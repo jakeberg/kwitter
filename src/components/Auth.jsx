@@ -10,9 +10,10 @@ class Auth extends React.Component {
 
         {/* <Button onClick={this.handleRegistration}>Click for Registration</Button >
         <Button onClick={this.handleLogin}>Click for Login</Button > */}
+        <br />
         <div class="ui segment">
           <div class="ui active "></div>
-          <Form>
+          <Form onSubmit={this}>
             <Form.Field>
               <h1>Register:</h1>
               <label>Username:</label>
@@ -27,12 +28,12 @@ class Auth extends React.Component {
               <Button type="submit" className="ui primary basic button">Register (doesn't work yet)</Button>
             </Form.Field>
           </Form>
-
         </div>
+        <h3>or if you are returning...</h3>
         {/* loader huge */}
         <div class="ui segment">
           <div class="ui active "></div>
-          <Form>
+          <Form onSubmit={this}>
             <Form.Field>
               <h1>Login:</h1>
               <label>Username:</label>

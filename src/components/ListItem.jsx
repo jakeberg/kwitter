@@ -23,12 +23,23 @@ class ListItem extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div className="postItem">
-          <div className="postText">
-            {this.props.text}
-          </div>
-          <div className="postDate">
-            {this.formatDate(this.props.date)}
+
+        <div className="ui feed segment">
+          <div className="event">
+            <div className="label">
+              <img src="http://aspiretechsoft.com/assets/images/testimonials/user-default.png" />
+            </div>
+            <div className="content">
+              <div className="date">
+              {this.formatDate(this.props.date)}
+            </div>
+              <div className="summary">
+                <a>User: </a> created a post
+            </div>
+              <div className="extra text">
+              {this.props.text}
+            </div>
+            </div>
           </div>
         </div>
       </React.Fragment>
