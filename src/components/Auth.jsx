@@ -64,8 +64,8 @@ class Auth extends React.Component {
         {/* <Button onClick={this.handleRegistration}>Click for Registration</Button >
         <Button onClick={this.handleLogin}>Click for Login</Button > */}
         <br />
-        <div class="ui segment">
-          <div class="ui active "></div>
+        <div className="ui segment">
+          <div className="ui active "></div>
           <Form onSubmit={this.handleRegistration}>
             <Form.Field>
               <h1>Register:</h1>
@@ -84,8 +84,8 @@ class Auth extends React.Component {
         </div>
         <h3>or if you are returning...</h3>
         {/* loader huge */}
-        <div class="ui segment">
-          <div class="ui active "></div>
+        <div className="ui segment">
+          <div className="ui active "></div>
           <Form onSubmit={this.handleLogin}>
             <Form.Field>
               <h1>Login:</h1>
