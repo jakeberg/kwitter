@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../App.css';
-import  ListMessages  from './ListMessages';
+import ListMessages from './ListMessages';
 
 class App extends Component {
 
@@ -22,6 +22,7 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(response => {
+        console.log(response.messages);
         this.setState({
           messages: response.messages,
         });
@@ -75,13 +76,14 @@ class App extends Component {
           <div className="App-header">
             <div className="App-title">
               <h1>Twitter, but worse</h1>
+              <p id="lol">Have fun i guess</p>
             </div>
           </div>
-          <section>
+          <div id="buttons">
             <button onClick={this.handleRegistration}>Click for Registration</button>
             <button onClick={this.handleLogin}>Click for Login</button>
-            <ListMessages messages={this.state.messages} />
-          </section>
+          </div>
+          <ListMessages messages={this.state.messages} />
           <img src="https://i.redditmedia.com/27bQCeT9rh-cVK0R3ZEig-V8ufwS04H50K0oI_c1vzQ.jpg?w=500&s=83a7df8c84302bc75ec24c74d48c64fc" />
         </div>
       </React.Fragment>

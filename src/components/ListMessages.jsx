@@ -7,9 +7,9 @@ class ListMessages extends React.Component {
     render() {
       return (
         <React.Fragment>
-          <ul>
-            {this.props.messages.map((message, i) => <ListItem key={i} value={message.text} />)}
-          </ul>
+          <div id="posts">
+            {this.props.messages.map((message, i) => <ListItem key={i} date={message.createdAt} text={message.text} />)}
+          </div>
         </React.Fragment>
       );
     };
