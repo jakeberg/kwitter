@@ -9,9 +9,6 @@ import { Link } from 'react-router-dom';
 class App extends Component {
 
   state = {
-    username: 'jakeberg',
-    password: "123456",
-    displayName: 'JakeBerg',
     messages: [],
   };
 
@@ -26,38 +23,10 @@ class App extends Component {
       })
       .then(response => response.json())
       .then(response => {
-        console.log(response.messages);
         this.setState({
           messages: response.messages,
         });
       }
-      );
-  }
-
-  handleRegistration = () => {
-    fetch("https://kwitter-api.herokuapp.com/auth/register", )
-      .then(response => response.json())
-      .then(myJson =>
-        console.log(myJson)
-      );
-  }
-
-  handleLogin = () => {
-    fetch("https://kwitter-api.herokuapp.com/auth/login",
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: "cors",
-        body: JSON.stringify({
-          username: this.state.username,
-          password: this.state.password,
-        }),
-      })
-      .then(response => response.json())
-      .then(myJson =>
-        console.log(myJson)
       );
   }
 
@@ -72,7 +41,6 @@ class App extends Component {
         <div className="ui container">
 
           <div className="App-header">
-            <button class="ui inverted button button logoutBtnPosition">Logout</button>
             <div className="App-title">
               <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <h1> Kwitter </h1></Link>
             </div>

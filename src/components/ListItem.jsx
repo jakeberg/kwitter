@@ -34,7 +34,7 @@ class ListItem extends React.Component {
               {this.formatDate(this.props.date)}
             </div>
               <div className="summary">
-                <a>User: </a> created a post
+                <a>User:{this.props.userId}</a>
             </div>
               <div className="extra text">
               {this.props.text}

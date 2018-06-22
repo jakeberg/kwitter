@@ -8,12 +8,11 @@ class ListMessages extends React.Component {
       return (
         <React.Fragment>
           <div id="posts">
-            {this.props.messages.map((message, i) => <ListItem key={i} date={message.createdAt} text={message.text} />)}
+            {this.props.messages.sort( (a, b) => Date.parse(b.createdAt) - Date.parse(a.createdAt) ).map((message, i) => <ListItem key={i} date={message.createdAt} text={message.text} />)}
           </div>
         </React.Fragment>
       );
     };
   };
-
 
 export default ListMessages;
