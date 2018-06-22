@@ -53,6 +53,7 @@ class App extends Component {
             <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
           </Switch>
 
+
           <Footer />
         </div>
       </React.Fragment>

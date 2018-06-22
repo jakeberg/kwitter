@@ -9,7 +9,6 @@ class Auth extends React.Component {
     password: '',
     usernameRegistration: '',
     passwordRegistration: '',
-    displayName: '',
   };
 
   handleChange = field => e => {
@@ -32,9 +31,9 @@ class Auth extends React.Component {
       }),
     })
       .then(response => response.json())
-      .then(myJson =>
-        console.log(myJson)
-      );
+      .then(data => {
+        console.log(data);
+      })
   }
 
   handleLogin = () => {
@@ -51,9 +50,9 @@ class Auth extends React.Component {
         }),
       })
       .then(response => response.json())
-      .then(myJson =>
-        console.log(myJson)
-      );
+      .then(data => {
+        console.log(data);
+      })
   }
 
 
@@ -78,7 +77,7 @@ class Auth extends React.Component {
               <input type="password" onChange={this.handleChange("passwordRegistration")}/>
               <br />
               <br />
-              <Button type="submit" className="ui primary basic button">Register (doesn't work yet)</Button>
+              <Button type="submit" className="ui primary basic button">Register</Button>
             </Form.Field>
           </Form>
         </div>
@@ -98,7 +97,7 @@ class Auth extends React.Component {
               <input type="password" onChange={this.handleChange("password")} />
               <br />
               <br />
-              <Button type='submit' className="ui primary basic button"><Link to="/messages">Login (doesn't work yet) </Link></Button>
+              <Button type='submit' className="ui primary basic button"><Link to="/messages">Login</Link></Button>
             </Form.Field>
           </Form>
         </div>
