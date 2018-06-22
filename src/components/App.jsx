@@ -45,13 +45,14 @@ class App extends Component {
               <Link to="/" style={{ textDecoration: 'none', color: 'white' }}> <h1> Kwitter </h1></Link>
             </div>
           </div>
-
-          <Switch>
+          <Auth />
+          <ListMessages messages={this.state.messages} />
+          {/* <Switch>
             <Route exact path="/" component={props => <Auth />} />
           </Switch>
           <Switch>
             <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
-          </Switch>
+          </Switch> */}
 
 
           <Footer />
