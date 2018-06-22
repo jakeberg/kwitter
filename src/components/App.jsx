@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App.css';
 import ListMessages from './ListMessages';
 import Auth from './Auth';
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Footer from "./Footer";
 
 class App extends Component {
 
@@ -33,19 +34,7 @@ class App extends Component {
   }
 
   handleRegistration = () => {
-    fetch("https://kwitter-api.herokuapp.com/auth/register",
-      {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: "cors",
-        body: JSON.stringify({
-          username: this.state.username,
-          password: this.state.password,
-          displayName: this.state.displayName,
-        }),
-      })
+    fetch("https://kwitter-api.herokuapp.com/auth/register", )
       .then(response => response.json())
       .then(myJson =>
         console.log(myJson)
@@ -76,12 +65,13 @@ class App extends Component {
       <React.Fragment>
         <head>
           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css" />
+          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico" />
         </head>
 
-        <div className="ui container App ">
+        <div className="ui container">
           <div className="App-header">
             <div className="App-title">
-              <h1 className="ui header"> Kwitter </h1>
+              <h1> Kwitter </h1>
             </div>
           </div>
           <section>
@@ -92,6 +82,7 @@ class App extends Component {
               <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
             </Switch>
           </section>
+          <Footer />
         </div>
       </React.Fragment>
     );
