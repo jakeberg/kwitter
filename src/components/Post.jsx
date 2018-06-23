@@ -1,6 +1,7 @@
 import React from 'react';
 import '../App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { Form, TextArea } from 'semantic-ui-react';
 
 
 class Post extends React.Component {
@@ -10,7 +11,9 @@ class Post extends React.Component {
       <React.Fragment>
         <div className="ui segment">
           <h3>Post</h3>
-          <textarea  rows="4" cols="50"/>
+          <Form>
+            <TextArea rows="4" cols="50" />
+          </Form>
         </div>
       </React.Fragment>
     );
