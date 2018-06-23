@@ -2,11 +2,11 @@ export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const LIST_MESSAGES = 'LIST_MESSAGES';
 export const LOGIN = 'LOGIN';
 
-export const addMessage = (text, id) => {
+export const addMessage = (text) => {
     return{
     type: ADD_MESSAGE,
     text,
-    id
+    // id
     //payload
     }
 };
@@ -19,10 +19,10 @@ export const listMessages = (text, id) => {
     }
 };
 
-export const login = (text, id) => {
-    return{
+export const login = (token) => {
+    return {
     type: LOGIN,
-    // token:,
-    // success:,
+    token: token,
+    
     }
 };

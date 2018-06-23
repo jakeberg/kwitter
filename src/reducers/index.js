@@ -1,29 +1,35 @@
-import { ADD_MESSAGE } from '../actions';
-
-
+import { ADD_MESSAGE, LOGIN } from '../actions';
 
 
 export const theReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_MESSAGE: 
-            // ...state will create a new instance of state and then after the ',' the second parameter will add to that. 
+            fetch("https://kwitter-api.herokuapp.com/messages",
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Authorization': 'Bearer ' + state.token,
+                },
+                mode: "cors",
+                body: JSON.stringify({
+                    text: action.text
+                }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                console.log("This message was posted: ",data);
+            })
+    
+
+            return;
+        case LOGIN: 
             return {
-                ...state,
-                messages: [
-                    ...state.messages,{
-                        id: (state.todos.length + 1),
-                        text: action.text,
-                        userId: 1,
-                        updatedAt: action.updatedAt,
-                        createdAt: action.createdAt,
-                        
-                    }
-                ],
-            };
-            
-        
-            
+            ...state,
+            token: action.token
+            }    
         default:
             return state;
     }
 };
+

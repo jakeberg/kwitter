@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import { Button, Checkbox, Form } from 'semantic-ui-react'
+import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { connect } from 'react-redux';
+import { login } from '../actions';
 
 class Auth extends React.Component {
   state = {
@@ -17,6 +19,8 @@ class Auth extends React.Component {
 		});
 	}
 
+
+  //this will need redux update 
   handleRegistration = () => {
     fetch("https://kwitter-api.herokuapp.com/auth/register", {
       method: 'POST',
@@ -52,7 +56,9 @@ class Auth extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
+        this.props.dispatch(login(data.token));
         console.log(data);
+       
       })
   }
 
@@ -98,7 +104,8 @@ class Auth extends React.Component {
               <input type="password" onChange={this.handleChange("password")} />
               <br />
               <br />
-              <Button type='submit' className="ui primary basic button"><Link to="/main">Login</Link></Button>
+              <Button type='submit' className="ui primary basic button">Login</Button>
+              <Button className="ui primary basic button"><Link to="/main">Go to main page</Link></Button>
             </Form.Field>
           </Form>
         </div>
@@ -108,4 +115,4 @@ class Auth extends React.Component {
   }
 }
 
-export default Auth;
+export default connect()(Auth);
