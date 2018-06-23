@@ -97,7 +97,7 @@ class Auth extends React.Component {
               <input type="password" onChange={this.handleChange("password")} />
               <br />
               <br />
-              <Button type='submit' className="ui primary basic button"><Link to="/messages">Login</Link></Button>
+              <Button type='submit' className="ui primary basic button"><Link to="/main">Login</Link></Button>
             </Form.Field>
           </Form>
         </div>

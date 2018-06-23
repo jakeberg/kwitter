@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import '../App.css';
-import ListMessages from './ListMessages';
+import Main from './Main';
 import Auth from './Auth';
 import Footer from "./Footer";
 import { Link } from 'react-router-dom';
@@ -48,9 +48,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={props => <Auth />} />
-          </Switch>
-          <Switch>
-            <Route exact path="/messages" component={props => <ListMessages messages={this.state.messages} />} />
+            <Route path="/main" component={props => <Main messages={this.state.messages} />} />
           </Switch>
 
 
