@@ -5,6 +5,7 @@ import { Form, TextArea, Button } from 'semantic-ui-react';
 import { addMessage } from '../actions';
 import { connect } from 'react-redux';
 
+
 class Post extends React.Component {
   state = {
 		text: ''
@@ -34,9 +35,11 @@ class Post extends React.Component {
       <React.Fragment>
         <div className="ui segment">
           <h3>Post</h3>
+
           <Form >
             <TextArea onChange={this.handleOnChange} placeholder="What needs to be done?" value={this.state.text} autoFocus rows="4" cols="50"/>
             <Button onClick={this.handleSubmit} type='submit' >Submit</Button>
+
           </Form>
         </div>
       </React.Fragment>

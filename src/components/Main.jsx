@@ -35,7 +35,7 @@ class Main extends React.Component {
 
                 <Switch>
                     <Route path="/main/profile" render={props => <Profile />} />
-                    <Route path="/main/messages" render={props => <ListMessages messages={this.props.messages} />} />
+                    <Route path="/main/messages" render={props => <ListMessages />} />
                     <Route path="/main/post" render={props => <Post />} />
                 </Switch>
             </React.Fragment>

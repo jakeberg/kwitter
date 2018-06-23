@@ -8,28 +8,6 @@ import { Link } from 'react-router-dom';
 
 class App extends Component {
 
-  state = {
-    messages: [],
-  };
-
-  componentDidMount = () => {
-    fetch("https://kwitter-api.herokuapp.com/messages",
-      {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        mode: "cors",
-      })
-      .then(response => response.json())
-      .then(response => {
-        this.setState({
-          messages: response.messages,
-        });
-      }
-      );
-  }
-
   render() {
     return (
       <React.Fragment>
@@ -44,7 +22,7 @@ class App extends Component {
 
           <Switch>
             <Route exact path="/" component={props => <Auth />} />
-            <Route path="/main" component={props => <Main messages={this.state.messages} />} />
+            <Route path="/main" component={props => <Main />} />
           </Switch>
 
 
