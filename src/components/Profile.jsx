@@ -37,7 +37,7 @@ class Profile extends React.Component {
                 <Item.Header as='a'>Header</Item.Header>
                 <Item.Meta>Description</Item.Meta>
                 <Item.Description>
-                  <Image src='/assets/images/wireframe/short-paragraph.png' />
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta, nam. Assumenda similique numquam harum tempore voluptatem, maxime debitis accusamus animi deserunt, delectus eveniet vel vitae aliquid obcaecati tempora dolorum expedita suscipit eum dolor recusandae nostrum perspiciatis odit! Adipisci sit voluptatibus tempore, voluptas commodi atque ad velit eum voluptate dicta perspiciatis.</p>
                 </Item.Description>
                 <Item.Extra>Additional Details</Item.Extra>
               </Item.Content>
