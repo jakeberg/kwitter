@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import { Button, Checkbox, Form, Header, Image, Modal  } from 'semantic-ui-react';
+import { Button, Checkbox, Form, Header, Image, Modal } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { login } from '../actions';
 import LoggedInModal from './LoggedInModal';
@@ -58,7 +58,7 @@ class Auth extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
-        if(data.token) {
+        if (data.token) {
           this.props.dispatch(login(data.token));
           this.setState({ loggedIn: true });
         } else {
@@ -70,7 +70,7 @@ class Auth extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <LoggedInModal loggedIn={this.state.loggedIn}/>
+        <LoggedInModal loggedIn={this.state.loggedIn} />
         <br />
         <div className="ui segment">
           <div className="ui active "></div>
@@ -90,10 +90,11 @@ class Auth extends React.Component {
             </Form.Field>
           </Form>
         </div>
+
         <h3>or if you are returning...</h3>
-        {/* loader huge */}
+
         <div className="ui segment">
-          <div className="ui active "></div>
+          <div className="ui active "></div>{/* loader huge */}
           <Form onSubmit={this.handleLogin}>
             <Form.Field>
               <h1>Login:</h1>
@@ -107,7 +108,6 @@ class Auth extends React.Component {
               <br />
               <br />
               <Button type='submit' className="ui primary basic button">Login</Button>
-              <Button className="ui primary basic button"><Link to="/main">Go to main page</Link></Button>
             </Form.Field>
           </Form>
         </div>

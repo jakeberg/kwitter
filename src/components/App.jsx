@@ -24,8 +24,7 @@ class App extends Component {
             <Route exact path="/" component={props => <Auth />} />
             <Route path="/main" component={props => <Main />} />
           </Switch>
-
-
+          
           <Footer />
         </div>
       </React.Fragment>
