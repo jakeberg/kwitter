@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../App.css';
 import { Link } from 'react-router-dom';
-import { Button, Checkbox, Form } from 'semantic-ui-react';
+import { Button, Checkbox, Form, Header, Image, Modal  } from 'semantic-ui-react';
 import { connect } from 'react-redux';
 import { login } from '../actions';
+import LoggedInModal from './LoggedInModal';
 
 class Auth extends React.Component {
   state = {
@@ -11,13 +12,14 @@ class Auth extends React.Component {
     password: '',
     usernameRegistration: '',
     passwordRegistration: '',
+    loggedIn: false,
   };
 
   handleChange = field => e => {
-		this.setState({
-			[field]: e.target.value
-		});
-	}
+    this.setState({
+      [field]: e.target.value
+    });
+  }
 
 
   //this will need redux update 
@@ -56,19 +58,19 @@ class Auth extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
-        this.props.dispatch(login(data.token));
-        console.log(data);
-       
+        if(data.token) {
+          this.props.dispatch(login(data.token));
+          this.setState({ loggedIn: true });
+        } else {
+          alert("Please register first.");
+        }
       })
   }
-
 
   render() {
     return (
       <React.Fragment>
-
-        {/* <Button onClick={this.handleRegistration}>Click for Registration</Button >
-        <Button onClick={this.handleLogin}>Click for Login</Button > */}
+        <LoggedInModal loggedIn={this.state.loggedIn}/>
         <br />
         <div className="ui segment">
           <div className="ui active "></div>
@@ -76,12 +78,12 @@ class Auth extends React.Component {
             <Form.Field>
               <h1>Register:</h1>
               <label>Username:</label>
-              <input type="text" onChange={this.handleChange("usernameRegistration")}/>
+              <input type="text" onChange={this.handleChange("usernameRegistration")} />
             </Form.Field>
 
             <Form.Field>
               <label>Password:</label>
-              <input type="password" onChange={this.handleChange("passwordRegistration")}/>
+              <input type="password" onChange={this.handleChange("passwordRegistration")} />
               <br />
               <br />
               <Button type="submit" className="ui primary basic button">Register</Button>
