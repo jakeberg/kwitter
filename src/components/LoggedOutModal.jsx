@@ -6,7 +6,7 @@ class LoggedOutModal extends React.Component {
     render() {
         return (
             <Modal open={this.props.logOut}>
-                <Header icon='check' content='Nice!' />
+                <Header icon='check' content='See you later!' />
                 <Modal.Content>
                     <p>You've successfully logged out.</p>
                 </Modal.Content>
