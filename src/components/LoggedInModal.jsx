@@ -12,7 +12,7 @@ class LoggedInModal extends React.Component {
                     <p>You've successfully logged in!</p>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Link to="/main/profile"><Button color='green'inverted><Icon name='checkmark' /> Go to your page.</Button></Link>
+                    <Link to="/main/profile"><Button color='green' inverted><Icon name='checkmark' /> Go to your page.</Button></Link>
                 </Modal.Actions>
             </Modal>
         );

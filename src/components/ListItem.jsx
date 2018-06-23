@@ -31,14 +31,14 @@ class ListItem extends React.Component {
             </div>
             <div className="content">
               <div className="date">
-              {this.formatDate(this.props.date)}
-            </div>
+                {this.formatDate(this.props.date)}
+              </div>
               <div className="summary">
                 <a>User: {this.props.userId}</a>
-            </div>
+              </div>
               <div className="extra text">
-              {this.props.text}
-            </div>
+                {this.props.text}
+              </div>
             </div>
           </div>
         </div>

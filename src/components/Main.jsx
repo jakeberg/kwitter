@@ -22,14 +22,14 @@ class Main extends React.Component {
             .then(response => response.json())
             .then(data => {
                 console.log("Logged out:", data);
-                this.setState({logOut: true})
+                this.setState({ logOut: true })
             })
     }
 
     render() {
         return (
             <React.Fragment>
-                <LoggedOutModal logOut={this.state.logOut}/>
+                <LoggedOutModal logOut={this.state.logOut} />
                 <div className="ui secondary pointing menu">
                     <Link className="item" to="/main/profile">Profile</Link>
                     <Link className="item" to="/main/messages">Messages</Link>
