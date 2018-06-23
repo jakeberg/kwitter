@@ -4,6 +4,7 @@ import { ADD_MESSAGE, LOGIN } from '../actions';
 export const theReducer = (state = [], action) => {
     switch (action.type) {
         case ADD_MESSAGE: 
+        console.log(action.text)
             fetch("https://kwitter-api.herokuapp.com/messages",
             {
                 method: 'POST',
@@ -16,7 +17,6 @@ export const theReducer = (state = [], action) => {
                     text: action.text
                 }),
                 })
-                .then(response => response.json())
                 .then(data => {
                 console.log("This message was posted: ",data);
             })

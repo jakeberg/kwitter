@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
+import { Link } from 'react-router-dom';
 
 class LoggedInModal extends React.Component {
 
@@ -11,7 +12,7 @@ class LoggedInModal extends React.Component {
                     <p>You've successfully logged in!</p>
                 </Modal.Content>
                 <Modal.Actions>
-                    <Button color='green' href="/main/profile" inverted><Icon name='checkmark' /> Go to your page.</Button>
+                    <Link to="/main/profile"><Button color='green'inverted><Icon name='checkmark' /> Go to your page.</Button></Link>
                 </Modal.Actions>
             </Modal>
         );
