@@ -30,7 +30,7 @@ class Post extends React.Component {
           <h3>Post</h3>
 
           <Form >
-            <TextArea onChange={this.handleOnChange} placeholder="Make a post?" value={this.state.text} autoFocus rows="4" cols="50" />
+            <TextArea onChange={this.handleOnChange} placeholder="Make a post" value={this.state.text} autoFocus rows="4" cols="50" />
             <Button onClick={this.handleSubmit} type='submit' >Submit</Button>
 
           </Form>
