@@ -33,10 +33,6 @@ class App extends Component {
   render() {
     return (
       <React.Fragment>
-        <head>
-          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.3.2/semantic.min.css" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico" />
-        </head>
 
         <div className="ui container">
 
