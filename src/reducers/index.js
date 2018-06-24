@@ -25,7 +25,9 @@ export const theReducer = (state = [], action) => {
                     console.log("This message was posted: ", data);
                 })
 
-            return;
+            return{
+                ...state
+            };
             case LIKE_MESSAGE:
             fetch("https://kwitter-api.herokuapp.com/likes",
                 {
@@ -44,7 +46,9 @@ export const theReducer = (state = [], action) => {
                     console.log("This message was liked: ", data);
                 })
 
-            return;
+                return{
+                    ...state
+                };
             case UNLIKE_MESSAGE:
             let messagePath = "https://kwitter-api.herokuapp.com/likes/" + action.messageId;
             fetch(messagePath,
@@ -59,7 +63,9 @@ export const theReducer = (state = [], action) => {
                 .then(data => {
                     console.log("This message was unliked: ", data);
                 })
-            return;
+                return{
+                    ...state
+                };
         default:
             return state;
     }

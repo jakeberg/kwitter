@@ -29,6 +29,7 @@ class ListItem extends React.Component {
     this.props.dispatch(likeMessage(userId, messageId))
   }
   handleUnlike = (messageId) => () => {
+    console.log(messageId)
     this.props.dispatch(unlikeMessage(messageId))
   }
 
