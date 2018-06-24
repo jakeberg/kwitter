@@ -1,6 +1,8 @@
 import React from 'react';
 import '../App.css';
-import { Feed, Icon } from 'semantic-ui-react'
+import { Feed, Icon } from 'semantic-ui-react';
+
+const PHOTO_URL = "https://picsum.photos/200?photo=";
 
 class ListItem extends React.Component {
 
@@ -21,14 +23,13 @@ class ListItem extends React.Component {
   }
 
   render() {
-    console.log(this.props.likes)
     return (
       <React.Fragment>
 
         <div className="ui feed segment">
           <div className="event">
             <div className="label">
-              <img src="http://aspiretechsoft.com/assets/images/testimonials/user-default.png" />
+              <img src={PHOTO_URL + this.props.photo[this.props.userId].filename} />
             </div>
             <div className="content">
               <div className="date">
@@ -41,8 +42,8 @@ class ListItem extends React.Component {
                 {this.props.text}
                 {this.props.likes.length}
               </div>
-              <div class="meta">
-                <a class="like"><i class="like icon"></i> {this.props.likes.length} Likes</a>
+              <div className="meta">
+                <a className="like"><i className="like icon"></i> {this.props.likes.length} Likes</a>
               </div>
 
             </div>
