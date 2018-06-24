@@ -28,11 +28,13 @@ class Post extends React.Component {
     return (
       <React.Fragment>
         <div className="ui segment">
-          
+
           <h3>Post</h3>
 
           <Form >
             <TextArea onChange={this.handleOnChange} placeholder="Make a post" value={this.state.text} autoFocus rows="4" cols="50" />
+            <br/>
+            <br/>
             <Button onClick={this.handleSubmit} type='submit' >Submit</Button>
           </Form>
 
