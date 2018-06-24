@@ -28,6 +28,10 @@
   right: 100px;
 }
 
+.linkHover {
+  
+}
+
 @media (max-width: 500px) {
   .logoutBtnPosition {
     right: 50px;
