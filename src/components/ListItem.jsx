@@ -40,7 +40,6 @@ class ListItem extends React.Component {
               </div>
               <div className="extra text">
                 {this.props.text}
-                {this.props.likes.length}
               </div>
               <div className="meta">
                 <a className="like"><i className="like icon"></i> {this.props.likes.length} Likes</a>
