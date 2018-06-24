@@ -40,7 +40,7 @@ class ListMessages extends React.Component {
 
   render() {
     const { photos = [] } = this.state;
-    console.log(this.state.photos)
+    // console.log(this.state.messages);
     return (
       <React.Fragment>
         <div className="ui segment">
@@ -49,7 +49,9 @@ class ListMessages extends React.Component {
             .map((message, i) =>
               <ListItem
                 key={i}
+                id={i}
                 userId={message.userId}
+                messageId={message.id}
                 date={message.createdAt}
                 text={message.text}
                 likes={message.likes}

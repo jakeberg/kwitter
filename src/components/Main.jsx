@@ -29,14 +29,6 @@ class Main extends React.Component {
             })
     }
 
-    hoverOn = () => {
-        this.setState({hover: "item active"})
-    }
-
-    hoverOff = () => {
-        this.setState({hover: 'item '})
-    }
-
     render() {
         const currentLocation = window.location.href
         const profile = "http://localhost:3000/main/profile"

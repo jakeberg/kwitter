@@ -38,7 +38,6 @@ class Auth extends React.Component {
     })
       .then(response => response.json())
       .then(data => {
-        console.log(data);
         alert("You've been registered!")
       })
   }
@@ -58,7 +57,6 @@ class Auth extends React.Component {
       })
       .then(response => response.json())
       .then(data => {
-        console.log(data.token)
         this.props.dispatch(login(data.token));
         if (data.token) {
           this.setState({ loggedIn: true });
