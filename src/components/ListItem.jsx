@@ -21,6 +21,7 @@ class ListItem extends React.Component {
   }
 
   render() {
+    console.log(this.props.likes)
     return (
       <React.Fragment>
 
@@ -38,7 +39,12 @@ class ListItem extends React.Component {
               </div>
               <div className="extra text">
                 {this.props.text}
+                {this.props.likes.length}
               </div>
+              <div class="meta">
+                <a class="like"><i class="like icon"></i> {this.props.likes.length} Likes</a>
+              </div>
+
             </div>
           </div>
         </div>

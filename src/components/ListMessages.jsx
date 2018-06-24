@@ -33,11 +33,12 @@ class ListMessages extends React.Component {
   }
 
   render() {
+    console.log(this.state.messages)
     return (
       <React.Fragment>
         <div className="ui segment">
           <h3>All Messages</h3>
-          {this.messagesSortedByDate(this.state.messages).map((message, i) => <ListItem key={i} userId={message.userId} date={message.createdAt} text={message.text} />)}
+          {this.messagesSortedByDate(this.state.messages).map((message, i) => <ListItem key={i} userId={message.userId} date={message.createdAt} text={message.text} likes={message.likes}/>)}
         </div>
       </React.Fragment>
     );
